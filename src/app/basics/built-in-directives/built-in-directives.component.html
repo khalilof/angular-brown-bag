@@ -1,0 +1,43 @@
+<p>built-in-directives works!</p>
+
+<!-- ngClass Directive to be able conditionally to set classes-->
+<p [ngClass]="ngClassRed ? 'red': ''">NgClass Directive</p>
+
+<!-- ngStyle Directive to be able dynamically to set style/s -->
+<p [ngStyle]="myDynamicallyCreatedStyle">NgStyle Directive</p>
+
+
+<!-- *ngFor to loop over lists/arrays and dynamically create html structure -->
+<div class="heading">*ngFor Directive: </div>
+<div>
+  <li *ngFor="let user of users">
+    <span [ngClass]="user.gender">{{user.name}}</span>
+  </li>
+</div>
+<br/><br/>
+
+<!-- *ngIf to conditionally add / remove html structure -->
+<div>
+  <div class="heading">*ngIf Directive:</div>
+  <li *ngFor="let user of users">
+    <span [ngClass]="user.gender">{{user.name}}, {{user.age}} years old</span>
+    <span class="red" *ngIf="user.age < 18"> - underage :)</span>
+    <span class="red" *ngIf="user.age > 66"> - overage :)</span>
+    <br/>
+  </li>
+</div>
+<br/><br/>
+
+
+<div class="heading">[ngSwitch] Directive: </div>
+<div>
+  <div *ngFor="let user of users">
+    <div [ngSwitch]="user.gender">
+      <strong *ngSwitchCase="'female'">{{user.name}}</strong>
+      <code *ngSwitchCase="'male'">{{user.name}}</code>
+      <i *ngSwitchCase="'other'">{{user.name}}</i>
+      <p *ngSwitchDefault></p>
+    </div>
+  </div>
+</div>
+

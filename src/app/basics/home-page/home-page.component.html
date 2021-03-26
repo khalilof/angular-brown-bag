@@ -1,0 +1,18 @@
+<p>Template is just normal HTML!</p>
+
+<hr> <!-- one way binding from component to template (view) -->
+{{oneWayBinding}}
+
+
+<hr> <!-- one way binding from template (view) to Component (as events) -->
+<p (click)="clickHandler('some infos')">
+  This is One-way Binding from Template(View) to Component class
+  '' clickHandler('some infos') ''
+</p>
+
+<hr> <!-- two way binding from component to view, and from view to component -->
+<input [(ngModel)]="someInputField">
+<p>the field value is : {{someInputField}}</p>
+<button (click)="resetInputFieldValue()">Reset input field value</button>
+
+
